@@ -3,8 +3,12 @@
 const app = getApp()
 
 Page({
+
+clickMe: function(){
+this.setData({msg:"哈哈哈哈"})
+},
   data: {
-    motto: 'Hello World',
+    motto: '欢迎使用-狼码办公小程序',
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
