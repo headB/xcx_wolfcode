@@ -6,6 +6,7 @@ Page({
 
 clickMe: function(){
 this.setData({msg:"哈哈哈哈"})
+var currObj = this
 wx.login({
   success(res) {
     console.log("I am kumanxuan")
@@ -19,7 +20,7 @@ wx.login({
         url: res_url,
         success(res1){
           console.log(res1)
-          this.setData({openid:res1.data.openid})
+          currObj.setData({openid:res1.data.openid})
         }
         // data: {
         //   code: res.code
