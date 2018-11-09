@@ -5,7 +5,7 @@ const app = getApp()
 Page({
 
 clickMe: function(){
-this.setData({msg:"哈哈哈哈"})
+this.setData({msg:""})
 var currObj = this
 wx.login({
   success(res) {
@@ -14,7 +14,7 @@ wx.login({
       //发起网络请求
       
       //这里成功之后,就可以尝试去获取用户的openid了
-      var res_url = 'https://api.weixin.qq.com/sns/jscode2session?appid=wx2f6212c8f8f7172e&secret=e7e73777f0b044961cc47a720853b226&js_code='+res.code+'&grant_type=authorization_code'
+      var res_url = ""
 
       wx.request({
         url: res_url,
@@ -37,7 +37,7 @@ wx.login({
   data: {
     userDetailInfo: '',
     openid: '',
-    motto: '欢迎使用-狼码办公小程序',
+    motto: '欢迎使用 beetle_Lai 轻办公',
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
@@ -75,6 +75,11 @@ wx.login({
         }
       })
     }
+  },
+  wifiInfo:function(){
+    wx.navigateTo({
+      url: '../wifi/wifi',
+    })
   },
   getUserInfo: function(e) {
     console.log(e)

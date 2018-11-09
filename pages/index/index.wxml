@@ -4,8 +4,8 @@
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
     <block wx:else>
       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">歡迎-{{userInfo.nickName}}-使用</text>
-      <text class="userinfo-nickname">你的个人openid是:{{openid}}</text>
+      <text class="userinfo-nickname">歡迎 {{userInfo.nickName}} 使用</text>
+      
     </block>
   </view>
   <view class="usermotto">
@@ -14,8 +14,10 @@
    
   </view>
 
-<view> <text>{{ msg }}</text></view>
 
-<button bindtap='clickMe' >点击我这里进入办公设置</button>
+
+<button class='function-button' type='primary'  bindtap='wifiInfo' >一键显示办公WIFI信息</button>
+<button class='function-button' type='primary'  bindtap='clickMe' >beetle办公网络控制</button>
+<button class='function-button' type='warn' bindtap='clickMe' >beetle办公账号查询/修改</button>
 
 </view>

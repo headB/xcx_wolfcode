@@ -1,23 +1,24 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/wifi/wifi"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "狼码教育小程序办公",
-    "navigationBarTextStyle":"black"
+    "navigationBarTitleText": "beetle_Lai轻办公",
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "首页"
+        "text": "认证/验证"
       },
       {
         "pagePath": "pages/logs/logs",
-        "text": "日志"
+        "text": "更多功能介绍"
       }
     ]
   }

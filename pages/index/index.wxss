@@ -17,6 +17,11 @@
 }
 
 .usermotto {
-  margin-top: 80px;
-  margin-bottom: 80px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.function-button {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }

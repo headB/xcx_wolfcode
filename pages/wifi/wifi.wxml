@@ -1,0 +1,30 @@
+<!--pages/wifi/wifi.wxml-->
+<!-- 这个位置就需要和后台实现交互,查看用户的的openid是否有足够的权限去查看wifi信息 -->
+<view class="container wifi">
+<text>信息如下(呢啲系紧要野)</text>
+</view>
+
+<view class='container wifi' >
+
+<text>wifi名字:XMG_2.4</text>
+<text>密码:GM025ITM\n\n</text>
+<text>wifi名字:XMG_5.3</text>
+<text>密码:GM025ITM\n\n</text>
+<text></text>
+<text>wifi名字:XMG_535</text>
+<text>密码:GM025ITM\n\n</text>
+<text></text>
+<text>wifi名字:wolfcode_wifi</text>
+<text>密码:lizhixuan123\n\n</text>
+<text></text>
+<text>wifi名字:wolfcode_wifi3</text>
+<text>密码:lizhixuan123\n\n</text>
+<text></text>
+<text>wifi名字:市场&网络营销部</text>
+<text>密码:GM025ITM\n\n</text>
+
+
+</view>
+
+
+
