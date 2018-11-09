@@ -13,6 +13,18 @@ Page({
    */
   onLoad: function (options) {
 
+  // 第一次尝试去获取后台数据,并且显示出来先
+  wx.request({
+    url: 'https://kumanxuan1.f3322.net/xcx/',
+    success(res){
+      console.log(res)
+      wx.showToast({
+        title: "载入成功!",
+        duration: 3000,
+      })
+    }
+  })
+
   },
 
   /**

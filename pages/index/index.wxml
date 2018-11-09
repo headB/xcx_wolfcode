@@ -18,6 +18,6 @@
 
 <button class='function-button' type='primary'  bindtap='wifiInfo' >一键显示办公WIFI信息</button>
 <button class='function-button' type='primary'  bindtap='clickMe' >beetle办公网络控制</button>
-<button class='function-button' type='warn' bindtap='clickMe' >beetle办公账号查询/修改</button>
+<button class='function-button' type='warn' bindtap='verify' >beetle办公账号查询/修改</button>
 
 </view>

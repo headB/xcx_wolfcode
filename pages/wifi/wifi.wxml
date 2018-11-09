@@ -1,7 +1,7 @@
 <!--pages/wifi/wifi.wxml-->
 <!-- 这个位置就需要和后台实现交互,查看用户的的openid是否有足够的权限去查看wifi信息 -->
 <view class="container wifi">
-<text>信息如下(呢啲系紧要野)</text>
+<text>信息如下(呢啲系紧要嘢)</text>
 </view>
 
 <view class='container wifi' >
