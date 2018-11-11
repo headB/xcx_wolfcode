@@ -7,6 +7,29 @@ Page({
     
   },
 
+  //检查用户已经是登陆用户
+
+  checkUserRegisterInfo: function(){
+    //后台请求,携带code给后台
+
+    var req_url = "http://127.0.0.1:5000/xcx/verify?code="
+
+    wx.login({
+      success(res) {
+        if (res.code) {
+          //发起网络请求
+          wx.request({
+            url: req_url+res.code,
+            success: function(res){
+              console.log(res)
+            }
+          })
+        } else {
+          console.log('登录失败！' + res.errMsg)
+        }
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -18,7 +41,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+    this.checkUserRegisterInfo()
   },
 
   /**
