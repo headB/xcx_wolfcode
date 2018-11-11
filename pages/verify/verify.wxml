@@ -1,0 +1,8 @@
+<!--pages/verify/verify.wxml-->
+<view class="container">
+
+<text>关于用户的数据</text>
+
+
+
+</view>

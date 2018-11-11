@@ -1,8 +1,11 @@
 {
   "pages": [
+    
     "pages/index/index",
+    "pages/verify/verify",
     "pages/logs/logs",
-    "pages/wifi/wifi"
+    "pages/wifi/wifi",
+    "pages/more/more"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -14,10 +17,14 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "认证/验证"
+        "text": "首页"
       },
       {
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/verify/verify",
+        "text": "认证"
+      },
+      {
+        "pagePath": "pages/more/more",
         "text": "更多功能介绍"
       }
     ]
