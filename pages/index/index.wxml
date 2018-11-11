@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="container">
   <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">点击授权登录</button>
     <block wx:else>
       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
       <text class="userinfo-nickname">歡迎 {{userInfo.nickName}} 使用</text>
@@ -15,9 +15,11 @@
   </view>
 
 
+<block wx:if="{{ hasUserInfo && canIUse}}" >
+<button  class='function-button' type='primary'  bindtap='wifiInfo' >办公WIFI信息</button>
+<button  class='function-button' type='primary'  bindtap='networkController' >办公网络控制</button>
+<button  class='function-button' type='warn' bindtap='verify' >办公账号查询/修改</button>
 
-<button class='function-button' type='primary'  bindtap='wifiInfo' >一键显示办公WIFI信息</button>
-<button class='function-button' type='primary'  bindtap='clickMe' >beetle办公网络控制</button>
-<button class='function-button' type='warn' bindtap='verify' >beetle办公账号查询/修改</button>
+</block >
 
 </view>

@@ -3,52 +3,50 @@
 const app = getApp()
 
 Page({
-
-clickMe: function(){
-this.setData({msg:""})
-var currObj = this
-wx.login({
-  success(res) {
-    console.log("I am kumanxuan")
-    if (res.code) {
-      //发起网络请求
-      
-      //这里成功之后,就可以尝试去获取用户的openid了
-      var res_url = ""
-
-      wx.request({
-        url: res_url,
-        success(res1){
-          console.log(res1)
-          currObj.setData({openid:res1.data.openid})
-        }
-        // data: {
-        //   code: res.code
-        // }
-      })
-      
-
-    } else {
-      console.log('登录失败！' + res.errMsg)
-    }
-  }
-})
-},
-verify: function(){
-  wx.showModal({
-    title: '提示',
-    content: '这是一个模态弹窗',
-    success(res) {
-      if (res.confirm) {
-        console.log('用户点击确定')
-      } else if (res.cancel) {
-        console.log('用户点击取消')
+  userInfoNotNull: function(){
+    wx.getSetting({
+      success(res){
+        console.log(res)
       }
-    }
-  })
-}
+    })
+    },
+  networkController: function(){
+    this.setData({msg:""})
+    var currObj = this
+    wx.login({
+      success(res) {
+        if (res.code) {
+          //发起网络请求
+          
+          //这里成功之后,就可以尝试去获取用户的openid了
+          var res_url = ""
+          
+        } else {
+          console.log('登录失败！' + res.errMsg)
+        }
+      }
+    })
+    wx.getUserInfo({
+      withCredentials: true,
+      success: function(res){
+        console.log(res)
+      }
+      })
 
-,
+    },
+  verify: function(){
+    wx.showModal({
+      title: '提示',
+      content: '这是一个模态弹窗',
+      success(res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+  },
   data: {
     userDetailInfo: '',
     openid: '',
@@ -70,6 +68,8 @@ verify: function(){
         hasUserInfo: true
       })
     } else if (this.data.canIUse){
+      //你好,我是第一次加载的!
+
       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
       // 所以此处加入 callback 以防止这种情况
       app.userInfoReadyCallback = res => {
@@ -91,17 +91,24 @@ verify: function(){
       })
     }
   },
+
+  onReady: function () {
+    
+    },
   wifiInfo:function(){
     wx.navigateTo({
       url: '../wifi/wifi',
     })
-  },
+    },
   getUserInfo: function(e) {
     console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
+    if (e.detail.errMsg == 'getUserInfo:ok'){
+      app.globalData.userInfo = e.detail.userInfo
+      this.setData({
+        userInfo: e.detail.userInfo,
+        hasUserInfo: true
+      })
+    }
   }
+  
 })
