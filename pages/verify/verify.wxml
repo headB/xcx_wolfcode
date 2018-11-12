@@ -10,6 +10,10 @@
 
 <text>用户信息</text>
 
+<view class='registerInfo' >
+{{userRegisterInfo}}
+</view>
+
 
 
 </view>

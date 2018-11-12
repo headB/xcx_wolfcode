@@ -8,7 +8,8 @@
     "pages/more/more"
   ],
   "window": {
-    "backgroundTextStyle": "light",
+    "onPullDownRefresh":true,
+    "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "beetle_Lai轻办公",
     "navigationBarTextStyle": "black"

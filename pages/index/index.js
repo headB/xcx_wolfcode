@@ -3,13 +3,13 @@
 const app = getApp()
 
 Page({
-  userInfoNotNull: function(){
-    wx.getSetting({
-      success(res){
-        console.log(res)
-      }
-    })
-    },
+ onPullDownRefresh: function(){
+   
+   setTimeout(function(){
+     console.log("我是网络延迟!")
+     wx.stopPullDownRefresh()
+   },2000)
+ },
   networkController: function(){
     this.setData({msg:""})
     var currObj = this

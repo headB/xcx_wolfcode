@@ -4,6 +4,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    userRegisterInfo : '',
     
   },
 
@@ -12,8 +13,9 @@ Page({
   checkUserRegisterInfo: function(){
     //后台请求,携带code给后台
 
+    var userRegisterInfo = this.data.userRegisterInfo
     var req_url = "http://127.0.0.1:5000/xcx/verify?code="
-
+    var _this = this
     wx.login({
       success(res) {
         if (res.code) {
@@ -21,6 +23,15 @@ Page({
           wx.request({
             url: req_url+res.code,
             success: function(res){
+              
+              userRegisterInfo = res.data.status
+              _this.setData({
+                userRegisterInfo:userRegisterInfo
+              })
+              // this.setData({
+              //   userRegisterInfo: res.data.status
+              // })
+              
               console.log(res)
             }
           })
@@ -34,14 +45,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    this.checkUserRegisterInfo()
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    this.checkUserRegisterInfo()
+    
+    
   },
 
   /**
