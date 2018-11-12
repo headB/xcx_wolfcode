@@ -1,1 +1,18 @@
 /* pages/verify/verify.wxss */
+.form1 {
+  margin-top:10px;
+  
+}
+
+.input1 {
+  height: 46px;
+  background: #eaeaea;
+}
+
+.button1 {
+  margin-top:4px;
+  height: 70%;
+  width: 60%;
+
+
+}
