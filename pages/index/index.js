@@ -90,7 +90,11 @@ Page({
     }
   },
   onReady: function () {
-    if (this.data.hasUserInfo) {this.checkAuthen()}
+    var _this = this
+    setTimeout(function(){
+      if (_this.data.hasUserInfo) { _this.checkAuthen() }
+    },1000)
+    
     },
   wifiInfo:function(){
     wx.navigateTo({

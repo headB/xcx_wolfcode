@@ -36,7 +36,7 @@ App({
   globalData: {
     userInfo: null,
     code:null,
-    req_url: "http://127.0.0.1:5000/xcx/verify",
+    req_url: "https://kumanxuan1.f3322.net/xcx/verify",
     testPublic: false
   }
 })
