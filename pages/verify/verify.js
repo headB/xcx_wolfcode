@@ -1,5 +1,6 @@
-Page({
+const app = getApp()
 
+Page({
   /**
    * 页面的初始数据
    */
@@ -7,16 +8,16 @@ Page({
     userRegisterInfo : '',
     isRegister: false,
     code: null,
-    req_url: "http://127.0.0.1:5000/xcx/verify"
+    req_url: app.globalData.req_url
   },
 
   //检查用户已经是登陆用户
 
   checkUserRegisterInfo: function(){
     //后台请求,携带code给后台
-
     var userRegisterInfo = this.data.userRegisterInfo
     var _this = this
+    var code = ''
     wx.login({
       success(res) {
         if (res.code) {
@@ -28,6 +29,16 @@ Page({
             },
             success: function (res) {
             userRegisterInfo = res.data.status
+            if (res.data.statusCode == '200'){
+              _this.data.isRegister = true,
+              _this.setData({
+                isRegister:true
+              })
+            }else{
+              _this.setData({
+                isRegister: false
+              })
+            }
             _this.setData({
             userRegisterInfo: userRegisterInfo
             })}
@@ -44,18 +55,28 @@ Page({
     if (this.data.code && e.detail.value.realname){
       //参数不为空,请求后台注册账号
       var realname = e.detail.value.realname
-      wx.request({
-        url: this.data.req_url,
-        data:{
-          "code":this.data.code,
-          "realname":realname
-        },
-        method:"post",
-        success:function(e){
-          console.log(e)
+      var req_url = this.data.req_url
+
+      wx.login({
+        success: function (e) {
+        
+          wx.request({
+            url: req_url,
+            data: {
+              "code": e.code,
+              "realname": realname
+            },
+            method: "post",
+            success: function (e) {
+              wx.showModal({
+                title: '后台提示',
+                content: e.data.status,
+              })
+              console.log(e)
+            }
+          })
         }
       })
-
     }else{
       wx.showModal({
         title: '提示',
@@ -115,8 +136,11 @@ Page({
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
+  //下拉刷新
   onPullDownRefresh: function () {
-    
+    // this.checkUserRegisterInfo()
+    this.onLoad()
+    wx.stopPullDownRefresh()
   },
 
   /**

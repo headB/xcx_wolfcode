@@ -3,13 +3,10 @@
 const app = getApp()
 
 Page({
- onPullDownRefresh: function(){
-   
-   setTimeout(function(){
-     console.log("我是网络延迟!")
-     wx.stopPullDownRefresh()
-   },2000)
- },
+  onPullDownRefresh: function(){
+        this.checkAuthen()
+        wx.stopPullDownRefresh()
+    },
   networkController: function(){
     this.setData({msg:""})
     var currObj = this
@@ -53,6 +50,7 @@ Page({
     motto: '欢迎使用 beetle_Lai 轻办公',
     userInfo: {},
     hasUserInfo: false,
+    hasRegister:false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   //事件处理函数
@@ -91,9 +89,8 @@ Page({
       })
     }
   },
-
   onReady: function () {
-    
+    if (this.data.hasUserInfo) {this.checkAuthen()}
     },
   wifiInfo:function(){
     wx.navigateTo({
@@ -109,6 +106,45 @@ Page({
         hasUserInfo: true
       })
     }
+    this.checkAuthen()
+  },
+  checkAuthen:function(){
+    var _this = this
+    wx.login({
+      success:function(e){
+        wx.request({
+          url: app.globalData.req_url,
+          data:{
+            'code':e.code
+          },
+          success:function(e1){
+              if (e1.data.statusCode=='200'){
+                  _this.data.hasRegister = true
+                  app.globalData.testPublic = true
+                  _this.setData({
+                    hasRegister:true
+                  })
+              }
+              else{
+
+                wx.showModal({
+                  title: '需要先认证',
+                  content: '使用本功能需要先登记然后使用',
+                  showCancel: false,
+                  success:function(){
+                    wx.switchTab({
+                      url: '/pages/verify/verify',
+                    })
+                  },
+                  
+                })
+
+                
+              }
+          }
+        })
+      }
+    })
+    
   }
-  
 })

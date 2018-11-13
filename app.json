@@ -1,9 +1,7 @@
 {
   "pages": [
-    
-    
-    "pages/verify/verify",
     "pages/index/index",
+    "pages/verify/verify",
     "pages/logs/logs",
     "pages/wifi/wifi",
     "pages/more/more"

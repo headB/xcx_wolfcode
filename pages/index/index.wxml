@@ -15,7 +15,7 @@
   </view>
 
 
-<block wx:if="{{ hasUserInfo && canIUse}}" >
+<block wx:if="{{ hasUserInfo && canIUse && hasRegister}}" >
 <button  class='function-button' type='primary'  bindtap='wifiInfo' >办公WIFI信息</button>
 <button  class='function-button' type='primary'  bindtap='networkController' >办公网络控制</button>
 <button  class='function-button' type='warn' bindtap='verify' >办公账号查询/修改</button>
