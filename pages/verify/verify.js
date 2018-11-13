@@ -71,6 +71,7 @@ Page({
               wx.showModal({
                 title: '后台提示',
                 content: e.data.status,
+                showCancel:false
               })
               console.log(e)
             }
@@ -137,9 +138,15 @@ Page({
    */
   //下拉刷新
   onPullDownRefresh: function () {
-    // this.checkUserRegisterInfo()
+    this.checkUserRegisterInfo()
     this.onLoad()
+    if (this.data.isRegister){
+      wx.switchTab({
+        url: '/pages/index/index',
+      })
+    }
     wx.stopPullDownRefresh()
+    
   },
 
   /**

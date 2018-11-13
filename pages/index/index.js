@@ -150,5 +150,9 @@ Page({
       }
     })
     
+  },
+  onShow:function(){
+    this.checkAuthen()
+    
   }
 })
