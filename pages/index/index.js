@@ -74,7 +74,7 @@ Page({
       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
       // 所以此处加入 callback 以防止这种情况
       app.userInfoReadyCallback = res => {
-        console.log(this.data)
+        
         this.setData({
           userInfo: res.userInfo,
           hasUserInfo: true
@@ -153,10 +153,22 @@ Page({
   },
   onShow:function(){
     
-    console.log(this.data.userInfo)
-    if(this.data.hasUserInfo && !this.data.hasRegister){
-      this.checkAuthen()
+    var _this = this
+    if (app.globalData.firstTime){
+      setTimeout(function(
+        
+      ) {
+        if (_this.data.hasUserInfo && !_this.data.hasRegister) {
+
+          _this.checkAuthen()
+        }},1000)
+      app.globalData.firstTime = false
     }
+   
+    if (this.data.hasUserInfo && !this.data.hasRegister){
+      
+        this.checkAuthen()
+      }
   },
   tryLogin: function(){
 
