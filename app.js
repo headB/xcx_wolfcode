@@ -33,12 +33,16 @@ App({
       }
     })
   },
+  
   globalData: {
     userInfo: null,
     code:null,
-    req_url: "https://kumanxuan1.f3322.net/xcx/verify",
+    base_url: "http://localhost:5000",
+    // req_url: this.base_url+"/xcx/verify",
+    commonUrl: this,
     testPublic: false,
     hasRegister:false,
-    firstTime:true
+    firstTime:true,
+    cookie: false
   }
 })

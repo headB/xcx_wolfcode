@@ -1,11 +1,17 @@
 // pages/wifi/wifi.js
+
+const app = getApp()
+
 Page({
+
+
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    wifiInfo:{},
+    name:'xuan'
   },
 
   /**
@@ -13,15 +19,29 @@ Page({
    */
   onLoad: function (options) {
 
+    var _this = this
+
   // 第一次尝试去获取后台数据,并且显示出来先
   wx.request({
-    url: 'https://kumanxuan1.f3322.net/xcx/',
+    url: app.globalData.base_url+"/xcx/request",
+    method : "post",
+    data:{
+      "type":"wifi",
+    },
+    header:{
+      "cookie": "session="+app.globalData.cookie
+    },
     success(res){
       console.log(res)
       wx.showToast({
-        title: "载入成功!",
-        duration: 3000,
+        title: "加载成功!",
+        duration: 2000,
       })
+      //console.log(_this)
+      console.log(res)
+      _this.setData({ wifiInfo: res.data.status })
+      //_this.setData({ wifiInfo: [{'wifiName':'xx'},{"wifi":"yy"}] })
+      
     }
   })
 

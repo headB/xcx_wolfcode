@@ -76,6 +76,7 @@ Page({
       app.userInfoReadyCallback = res => {
         
         this.setData({
+          
           userInfo: res.userInfo,
           hasUserInfo: true
         })
@@ -115,19 +116,36 @@ Page({
     var _this = this
     wx.login({
       success:function(e){
+        
         wx.request({
-          url: app.globalData.req_url,
+          url: app.globalData.base_url+"/xcx/verify",
           data:{
             'code':e.code
           },
           success:function(e1){
-            
+            console.log(e1)
               if (e1.data.statusCode=='200'){
                   _this.data.hasRegister = true
                   app.globalData.testPublic = true
                   _this.setData({
                     hasRegister:true
                   })
+                  //headerInfo = e1
+                app.globalData.cookie  = e1.header["Set-Cookie"].split(/;/)[0].split(/=/)[1]
+                if(!app.globalData.cookie){
+                  wx.showModal({
+                    title: '登陆后台',
+                    content: '获取或者设置cookie失败',
+                    showCancel: false,
+                    cancelText: '',
+                    cancelColor: '',
+                    confirmText: 'roger',
+                    confirmColor: '',
+                    success: function(res) {},
+                    fail: function(res) {},
+                    complete: function(res) {},
+                  })
+                }
               }
               else{
 
