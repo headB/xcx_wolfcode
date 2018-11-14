@@ -37,6 +37,8 @@ App({
     userInfo: null,
     code:null,
     req_url: "https://kumanxuan1.f3322.net/xcx/verify",
-    testPublic: false
+    testPublic: false,
+    hasRegister:false,
+    firstTime:true
   }
 })

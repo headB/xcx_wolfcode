@@ -60,9 +60,12 @@ Page({
     })
   },
   onLoad: function () {
+    var _this1 = this
     if (app.globalData.userInfo) {
+      
       this.setData({
         userInfo: app.globalData.userInfo,
+        
         hasUserInfo: true
       })
     } else if (this.data.canIUse){
@@ -71,6 +74,7 @@ Page({
       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
       // 所以此处加入 callback 以防止这种情况
       app.userInfoReadyCallback = res => {
+        console.log(this.data)
         this.setData({
           userInfo: res.userInfo,
           hasUserInfo: true
@@ -89,12 +93,7 @@ Page({
       })
     }
   },
-  onReady: function () {
-    var _this = this
-    setTimeout(function(){
-      if (_this.data.hasUserInfo) { _this.checkAuthen() }
-    },1000)
-    
+  onReady: function () {  
     },
   wifiInfo:function(){
     wx.navigateTo({
@@ -122,6 +121,7 @@ Page({
             'code':e.code
           },
           success:function(e1){
+            
               if (e1.data.statusCode=='200'){
                   _this.data.hasRegister = true
                   app.globalData.testPublic = true
@@ -152,7 +152,13 @@ Page({
     
   },
   onShow:function(){
-    this.checkAuthen()
     
+    console.log(this.data.userInfo)
+    if(this.data.hasUserInfo && !this.data.hasRegister){
+      this.checkAuthen()
+    }
+  },
+  tryLogin: function(){
+
   }
 })
