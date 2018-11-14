@@ -8,7 +8,7 @@ Page({
     userRegisterInfo : '',
     isRegister: false,
     code: null,
-    req_url: app.globalData.req_url
+    req_url: app.globalData.base_url+"/xcx/verify"
   },
 
   //检查用户已经是登陆用户
@@ -28,8 +28,9 @@ Page({
               'code':res.code
             },
             success: function (res) {
-            userRegisterInfo = res.data.status
+              userRegisterInfo = res.data.status
             if (res.data.statusCode == '200'){
+              
               _this.data.isRegister = true,
               _this.setData({
                 isRegister:true
@@ -61,7 +62,7 @@ Page({
         success: function (e) {
         
           wx.request({
-            url: req_url,
+            url: ç,
             data: {
               "code": e.code,
               "realname": realname
