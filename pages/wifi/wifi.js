@@ -32,15 +32,13 @@ Page({
       "cookie": "session="+app.globalData.cookie
     },
     success(res){
-      console.log(res)
+      
       wx.showToast({
         title: "加载成功!",
         duration: 2000,
       })
-      //console.log(_this)
-      console.log(res)
+      
       _this.setData({ wifiInfo: res.data.status })
-      //_this.setData({ wifiInfo: [{'wifiName':'xx'},{"wifi":"yy"}] })
       
     }
   })
