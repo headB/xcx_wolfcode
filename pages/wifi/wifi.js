@@ -11,7 +11,6 @@ Page({
    */
   data: {
     wifiInfo:{},
-    name:'xuan'
   },
 
   /**
