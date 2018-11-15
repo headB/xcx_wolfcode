@@ -4,10 +4,13 @@
     "pages/verify/verify",
     "pages/logs/logs",
     "pages/wifi/wifi",
-    "pages/more/more"
+    "pages/account/account",
+    "pages/more/more",
+    "pages/network/network"
+    
   ],
   "window": {
-    "onPullDownRefresh":true,
+    "onPullDownRefresh": true,
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "beetle_Lai轻办公",

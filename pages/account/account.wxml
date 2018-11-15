@@ -1,0 +1,7 @@
+<!--pages/account/account.wxml-->
+<view class='container'>
+
+<text>{{accountInfo}}</text>
+
+
+</view>

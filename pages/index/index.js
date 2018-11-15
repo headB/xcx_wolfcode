@@ -8,40 +8,18 @@ Page({
         wx.stopPullDownRefresh()
     },
   networkController: function(){
-    this.setData({msg:""})
-    var currObj = this
-    wx.login({
-      success(res) {
-        if (res.code) {
-          //发起网络请求
-          
-          //这里成功之后,就可以尝试去获取用户的openid了
-          var res_url = ""
-          
-        } else {
-          console.log('登录失败！' + res.errMsg)
-        }
-      }
+    wx.navigateTo({
+      url: '/pages/network/network',
     })
-    wx.getUserInfo({
-      withCredentials: true,
-      success: function(res){
-        console.log(res)
-      }
-      })
-
     },
   verify: function(){
-    wx.showModal({
-      title: '提示',
-      content: '这是一个模态弹窗',
-      success(res) {
-        if (res.confirm) {
-          console.log('用户点击确定')
-        } else if (res.cancel) {
-          console.log('用户点击取消')
-        }
-      }
+
+    // wx.reLaunch({
+    //   url: '/pages/account/acount',
+    // })
+
+    wx.navigateTo({
+      url: '/pages/account/account',
     })
   },
   data: {

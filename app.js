@@ -37,8 +37,8 @@ App({
   globalData: {
     userInfo: null,
     code:null,
-    //base_url: "http://localhost:5000",
-    base_url: "https://kumanxuan1.f3322.net",
+    base_url: "http://localhost:5000",
+    //base_url: "https://kumanxuan1.f3322.net",
     commonUrl: this,
     testPublic: false,
     hasRegister:false,

@@ -6,9 +6,9 @@
   2.如果不是,就弹出一个按钮,让用户自己去填写自己的备注名, -->
 
 
+<text>下拉可以刷新用户信息</text>
 
-
-<text>用户信息</text>
+<text>\n\n用户信息</text>
 
 <view class='registerInfo' >
 {{userRegisterInfo}}

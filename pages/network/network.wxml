@@ -1,0 +1,48 @@
+<!--pages/network/network.wxml-->
+<view class='container header'>
+
+
+
+<text>下面列出为广州课室网络状态\n\n</text>
+
+<!-- <text class='text1'></text> -->
+<view class='table' >
+<view class='tr'>
+<view class='td'>序号</view>
+<view class='td'>课室</view>
+<view class='td'>当前</view>
+<view class='td'>操作</view>
+</view>
+
+<block wx:for="{{classInfo}}" >
+<view class='tr'>
+<view class='td'>{{index+1}}</view>
+<view class='td'>{{item.class_name}}</view>
+
+<view class='td on' wx:if="{{item.status=='通网'}}" >{{item.status}}</view>
+<view class='td off' wx:if="{{item.status=='断网'}}">{{item.status}}</view>
+<!-- <view class='td' wx:if="{{item.status=='通网'}}" ><button plain='true' class="b1" type='warn'>关</button></view>
+<view class='td' wx:if="{{item.status=='断网'}}"><button plain='true' class="b1" type='primary'>开</button></view> -->
+
+
+<view class='td'>
+<switch id='{{item.operate_link}}' bindtap='setNetwork' checked wx:if="{{item.status=='通网'}}"></switch>
+<switch id='{{item.operate_link}}'  bindtap='setNetwork' wx:if="{{item.status=='断网'}}"></switch>
+</view>
+
+
+</view>
+</block>
+
+<block wx:if="{{setProcess}}">
+<view class='process1'>
+<text>正在处理,请稍等结果!</text>
+<progress show-info='true' percent="99" active='true' color="green" />
+
+</view>
+</block>
+
+</view>
+
+
+</view>

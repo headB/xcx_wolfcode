@@ -1,2 +1,6 @@
 <!--pages/more/more.wxml-->
-<text>pages/more/more.wxml</text>
+<view class='container'>
+
+<text>wolfcode</text>
+
+</view>
