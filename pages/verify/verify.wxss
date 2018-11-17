@@ -4,6 +4,10 @@
   
 }
 
+.c1 {
+padding: 0px;
+}
+
 .input1 {
   height: 46px;
   background: #eaeaea;
@@ -11,8 +15,27 @@
 
 .button1 {
   margin-top:4px;
-  height: 70%;
+  height: 80%;
+  width: 50%;
+  font-size: 11px;
+}
+
+.button2 {
+  margin-top:4px;
+  height: 60%;
   width: 60%;
+  font-size: 15px;
+}
 
+.method_1 {
+  border: 1px solid green;
+  padding:5px;
+}
 
+.method_text {
+  color:green;
+}
+
+.button_1 {
+size: 1px
 }

@@ -37,6 +37,11 @@ Page({
       url: '../logs/logs'
     })
   },
+  estimate:function(){
+    wx.navigateTo({
+      url: '/pages/estimate/estimate',
+    })
+  },
   onLoad: function () {
     var _this1 = this
     if (app.globalData.userInfo) {

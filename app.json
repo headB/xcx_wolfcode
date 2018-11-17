@@ -6,8 +6,8 @@
     "pages/wifi/wifi",
     "pages/account/account",
     "pages/more/more",
-    "pages/network/network"
-    
+    "pages/network/network",
+    "pages/estimate/estimate"
   ],
   "window": {
     "onPullDownRefresh": true,

@@ -1,27 +1,50 @@
 <!--pages/verify/verify.wxml-->
-<view class="container">
+<view class="container c1">
 
 <!-- 1.首先尝试去后台,获取当前用户是已经注册的用户
   1.如果是,就展示用户信息
   2.如果不是,就弹出一个按钮,让用户自己去填写自己的备注名, -->
 
 
-<text>下拉可以刷新用户信息</text>
+<text class='x1'>\n下拉可以刷新用户信息</text>
+<text class='x2'>\n用户信息</text>
 
-<text>\n\n用户信息</text>
 
-<view class='registerInfo' >
-{{userRegisterInfo}}
+  <view class='registerInfo' >
+  {{userRegisterInfo}}
 </view>
 
 <block wx:if="{{ !isRegister }}" >
-<form bindsubmit='formSubmit' bindreset='formReset' >
-<view class='form1'>
-<input class='input1' name='realname' placeholder='请输入你名字'></input>
-<button class='button1' form-type='submit' type='primary' >点击注册</button>
+<view class='method_1' >
+<text class='method_text'>方式一:与beetle面对面验证\n</text>
+  <form bindsubmit='formSubmit' bindreset='formReset' >
+    <view class='form1'>
+      <input class='input1' name='realname' placeholder='请输入你名字'></input>
+      <button class='button2' form-type='submit' type='primary' >点击注册</button>
+    </view>
+  </form>
+
 </view>
-</form>
-</block >
+
+<text>\n</text>
+<view class='method_1' >
+
+<text class='method_text'>方式二:通过邮箱自动验证\n</text>
+
+  <form bindsubmit='formSubmitMail' bindreset='formReset' >
+
+      <input class='input1' bindblur='setMail' name='email' value='@wolfcode.cn' ></input>
+      <text>\n</text>
+      <input class='input1'  name='verifyCode' placeholder='邮箱收到的验证码' ></input>
+      <button class='button1'  bindtap='sendVerifyCode'   type='warn' >发送验证码</button>
+      <button class='button1'  form-type='submit' type='primary' >点击注册</button>
+
+  </form>
+
+</view>
+
+
+  </block >
 
 
 

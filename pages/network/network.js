@@ -92,7 +92,7 @@ Page({
           classInfo: e.data.all_class_info
         })
         _this.data.forward = e.data.forwardUrl
-        console.log(e)
+        // console.log(e)
 
       }
     })
@@ -107,7 +107,7 @@ Page({
     var _this = this
       
     var url_encode = encodeURIComponent(_this.data.forward + e.target.id)
-    console.log(url_encode)
+    // console.log(url_encode)
 
     wx.request({
       url: app.globalData.base_url+"/xcx/forward_url/"+"?url="+url_encode,
@@ -115,7 +115,7 @@ Page({
         "Cookie":"session="+app.globalData.cookie
       },
       success:function(e){
-        console.log(e)
+        // console.log(e)
         if (e.statusCode == 200 && e.data.statusCode=='200'){
           wx.showModal({
             title: '网络操作',

@@ -1,0 +1,44 @@
+<view class='container'>
+
+<text>评分信息查看\n\n</text>
+
+
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker">
+      当前选择：{{array[index]}}
+    </view>
+  </picker>
+
+
+<!-- 一样的,这里也是使用 -->
+
+<block wx:if="{{estimateInfo}}" >
+
+<view class='table' >
+
+<view class='tr'>
+<view class='td'>序号</view>
+<view class='td'>名字</view>
+<view class='td'>班级</view>
+<view class='td'>时间</view>
+<view class='td'>查看</view>
+</view>
+
+
+
+
+<block wx:for="{{estimateInfo}}">
+
+<view class='tr'>
+<view class='td'>{{index+1}}</view>
+<view class='td'>{{item[1]}}</view>
+<view class='td'>{{item[2]}}</view>
+<view class='td'>{{item[3]}}</view>
+<view class='td'><button id="?teacher_name={{item[1]}}&class_name={{item[2]}}&class_info_id={{item[0]}}&type_detail={{item[6]}}" bindtap='showDetail' plain='true' type='primary' >查看</button></view>
+</view>
+
+</block>
+</view>
+</block>
+
+</view>
