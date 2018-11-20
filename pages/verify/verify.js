@@ -59,12 +59,13 @@ Page({
       //参数不为空,请求后台注册账号
       var realname = e.detail.value.realname
       var req_url = this.data.req_url
+      
 
       wx.login({
         success: function (e) {
         
           wx.request({
-            url: ç,
+            url: req_url,
             data: {
               "code": e.code,
               "realname": realname
@@ -262,7 +263,7 @@ Page({
   setMail: function(e){
 
     this.data.mail = e.detail.value
-
+    
   },
   /**
    * 用户点击右上角分享
