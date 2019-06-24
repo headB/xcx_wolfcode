@@ -1,0 +1,11 @@
+<!--pages/activity.wxml-->
+<view class="container">
+
+<text>叩丁狼活动室</text>
+
+<button  class='function-button' type='primary'  bindtap='applyFor' >申请活动室</button>
+<button  class='function-button' type='primary'  bindtap='detail' >本月活动表</button>
+
+<button  class='function-button' type='primary'  bindtap='myActivity' >我的活动</button>
+
+</view>

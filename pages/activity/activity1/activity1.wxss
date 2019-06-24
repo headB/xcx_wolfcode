@@ -1,0 +1,19 @@
+/* pages/activity1/activity1.wxss */
+page { background-color: #eff3f5; }
+
+.view1 {background:white;margin: 0 auto;
+
+margin-top: 20px;width:90%;padding:10px;}
+
+
+.text1 {text-align:center;margin-bottom:20px}
+
+
+input {margin-top: 5px;margin-bottom: 5px;padding:4px 10px;border: 1px solid #ccc;border-radius: 4px;}
+
+.submit {margin-top: 50px;width:140px;background-color:#2b7ae1;color: white;}
+
+
+
+
+

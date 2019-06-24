@@ -7,7 +7,11 @@
     "pages/account/account",
     "pages/more/more",
     "pages/network/network",
-    "pages/estimate/estimate"
+    "pages/estimate/estimate",
+    "pages/activity/activity",
+    "pages/activity/activity1/activity1",
+    "pages/activity/activity2/activity2",
+    "pages/activity/activity3/activity3"
   ],
   "window": {
     "onPullDownRefresh": true,
@@ -31,5 +35,6 @@
         "text": "更多功能介绍"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

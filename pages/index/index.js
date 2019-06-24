@@ -12,6 +12,14 @@ Page({
       url: '/pages/network/network',
     })
     },
+
+  bindTimeChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      time: e.detail.value
+    })
+  },
+
   verify: function(){
 
     // wx.reLaunch({
@@ -22,6 +30,18 @@ Page({
       url: '/pages/account/account',
     })
   },
+
+  activity: function () {
+
+   
+
+    wx.navigateTo({
+      url: '/pages/activity/activity',
+    })
+  },
+
+
+
   data: {
     userDetailInfo: '',
     openid: '',

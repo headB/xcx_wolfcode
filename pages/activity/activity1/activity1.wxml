@@ -1,0 +1,32 @@
+<!--pages/activity1/activity1.wxml-->
+<view class='view1'>
+
+<view class='text1'>
+叩丁狼活动室申请填写
+</view>
+
+<form bindsubmit="formSubmit" >
+
+<text>活动主题:</text>
+<input name="topic" placeholder="请确定你的分享主题" >
+</input>
+
+<text>申请人:
+</text>
+<input name="name" placeholder="请填写你的真实名字"  >
+</input>
+
+<text >↓请点击选择开始和结束时间↓</text>
+
+<picker name="startDate" mode="time" style="margin-top:5px;margin-bottom:5px" bindchange="startDateChange">
+开始时间:{{startDate}}
+</picker>
+
+<picker name="endDate" mode="date" style="margin-bottom:5px" bindchange="endDateChange">
+结束时间:{{ endDate }}
+</picker>
+
+<button  class="submit" form-type="submit"  >点击提交申请</button>
+</form>
+
+</view>

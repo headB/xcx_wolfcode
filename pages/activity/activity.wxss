@@ -1,0 +1,3 @@
+/* pages/activity.wxss */
+button {margin-top:10px;width: 140px; }
+page { background-color: #eff3f5; }
