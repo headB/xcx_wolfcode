@@ -21,8 +21,8 @@ Page({
       data: {
         topic: e.detail.value.topic,
         name: e.detail.value.name,
-        startDate: d1[0]+2000+"-"+(d1[1]+1)+"-"+d1[2]+" "+d1[3]+":"+d1[4], 
-        endDate: d2[0] + 2000 + "-" + (d2[1] + 1) + "-" + d2[2] + " " + d2[3] + ":" + d2[4]
+        startDate: d1[0]+2000+"-"+(d1[1]+1)+"-"+(d1[2]+1)+" "+d1[3]+":"+d1[4], 
+        endDate: d2[0] + 2000 + "-" + (d2[1] + 1) + "-" + (d2[2]+1) + " " + d2[3] + ":" + d2[4]
       },
       header: {
         'content-type': 'application/json', // 默认值
@@ -32,7 +32,33 @@ Page({
         console.log(res.data)
         console.log(res.data.status)
         console.log(this.data)
+        var content_response = res.data.status
+        if(res.data.status==true){
+          content_response = "提交成功,请等待审核!"
+        }
 
+        wx.showModal({
+          title: '后台提示',
+          content: content_response,
+          showCancel: false,
+          cancelText: '',
+          cancelColor: '',
+          confirmText: '确定',
+          confirmColor: '',
+          success: function(res1) {
+
+            if (res.data.status == true) {
+              wx.navigateBack({
+                delta: 1
+              })
+            }
+            
+
+          },
+          fail: function(res1) {},
+          complete: function(res1) {},
+        })
+        
 
       }
     })

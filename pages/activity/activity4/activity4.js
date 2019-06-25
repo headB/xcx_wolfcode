@@ -4,13 +4,13 @@ const app = getApp();
 
 Page({
 
-
+  
   passed: function (e) {
 
     //#通过处理
 
-    //获取id
-    var uuid = e.target.id;
+  //获取id
+  var uuid = e.target.id;
 
     wx.request({
       header: {
@@ -18,20 +18,38 @@ Page({
 
       },
 
-      url: app.globalData.base_url + "/xcx/activitys",
+      url: app.globalData.base_url + "/xcx/activity_review",
       method: "PUT",
       data: {
 
-        id: uuid
+        id:uuid
 
       },
       success(res) {
 
         //成功之后就手动刷新
         // wx.startPullDownRefresh()
-
+        
         //成功之后就手动刷新
-        wx.startPullDownRefresh()
+
+        if(res.data.code == 500){
+
+          wx.showModal({
+            title: '活动申请审核',
+            content: res.data.status,
+          })
+
+        }else{
+
+          wx.showModal({
+            title: '活动申请审核',
+            content: '审核通过',
+          })
+
+          wx.startPullDownRefresh()
+        }
+
+       
         // wx.stopPullDownRefresh()
       }
     })
@@ -47,7 +65,7 @@ Page({
   reject: function (e) {
 
     var uuid = e.target.id;
-
+    
     console.log(e)
 
     //然后就是后台请求了!
@@ -57,17 +75,17 @@ Page({
 
       },
 
-      url: app.globalData.base_url + "/xcx/activitys",
+      url: app.globalData.base_url + "/xcx/activity_review",
       method: "DELETE",
-      data: {
+      data:{
 
-        id: uuid
+        id:uuid
 
       },
       success(res) {
 
-        //成功之后就手动刷新
-        wx.startPullDownRefresh()
+      //成功之后就手动刷新
+      wx.startPullDownRefresh()
 
       }
     })
@@ -83,8 +101,8 @@ Page({
    */
   data: {
 
-    content: '',
-    request: app.globalData.base_url + "/xcx/activitys"
+    content:'',
+    request: app.globalData.base_url + "/xcx/activity_review"
 
   },
 
@@ -93,7 +111,7 @@ Page({
    */
   onLoad: function (options) {
 
-
+   
     var _this = this;
     //获取API数据.
     wx.request({
@@ -102,7 +120,7 @@ Page({
 
       },
 
-      url: app.globalData.base_url + "/xcx/activitys",
+      url: app.globalData.base_url + "/xcx/activity_review",
       method: "GET",
       success(res) {
 
@@ -118,7 +136,7 @@ Page({
 
       }
     })
-
+    
 
   },
 
@@ -127,7 +145,7 @@ Page({
    */
   onReady: function () {
 
-
+    
 
 
 

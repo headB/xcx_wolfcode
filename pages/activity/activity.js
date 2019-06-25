@@ -22,6 +22,11 @@ Page({
     })
   },
 
+  review: function () {
+    wx.navigateTo({
+      url: '/pages/activity/activity4/activity4',
+    })
+  },
 
 
   /**

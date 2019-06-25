@@ -32,6 +32,8 @@
 
 <view>
 
+<button  class='function-button' type='primary' id='{{item.uuid}}'  bindtap='passed' >通过</button>
+<button  class='function-button' type='warn' id='{{item.uuid}}'  bindtap='reject' >肥佬</button>
 
 </view>
 

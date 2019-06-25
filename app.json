@@ -11,7 +11,8 @@
     "pages/activity/activity",
     "pages/activity/activity1/activity1",
     "pages/activity/activity2/activity2",
-    "pages/activity/activity3/activity3"
+    "pages/activity/activity3/activity3",
+    "pages/activity/activity4/activity4"
   ],
   "window": {
     "onPullDownRefresh": true,

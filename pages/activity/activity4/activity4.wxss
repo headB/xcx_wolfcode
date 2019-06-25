@@ -1,7 +1,8 @@
-/* pages/activity/activity2/activity2.wxss */
+/* pages/activity/activity4/activity4.wxss */
 page { background-color: #eff3f5; }
 .items { margin-top:5px;margin-bottom: 20px;
 padding:8px 20px;text-align: center;
 background-color: white}
 .items text:nth-child(1) {color:#7f7f7f}
 .items view:nth-child(1) {padding-bottom: 15px;border-bottom: #eeeeee}
+button {margin-top:5px;margin-bottom: 10px;width:80%}
