@@ -1,7 +1,9 @@
 /* pages/activity/activity2/activity2.wxss */
-page { background-color: #eff3f5; }
-.items { margin-top:5px;margin-bottom: 20px;
-padding:8px 20px;text-align: center;
+page { background-color: #ececec; }
+.items { margin:0 auto;margin-top:5px;margin-bottom: 20px;
+padding:8px 20px;text-align: center;border-radius: 5px;
+width: 85%;
 background-color: white}
 .items text:nth-child(1) {color:#7f7f7f}
-.items view:nth-child(1) {padding-bottom: 15px;border-bottom: #eeeeee}
+
+.items view:nth-child(3) {margin-top:5px;border-top:1px solid #d6d6d6}
