@@ -1,2 +1,44 @@
-<!--pages/activity/activity3/activity3.wxml-->
-<text>pages/activity/activity3/activity3.wxml</text>
+<!--pages/activity/activity4/activity4.wxml-->
+
+<!-- <link rel="stylesheet" href="https://weui.io/weui.css"> -->
+<view style="margin-top:20px">
+<view>
+</view>
+<!-- 显示所有待审核的数据,通过的不管! -->
+
+<view>
+
+<block wx:for="{{content}}" >
+
+
+
+<view class="items">
+
+<view class="item1">
+<text>申请人:</text><text>      {{item.name}}</text>
+</view>
+
+<view>
+<text>分享话题:</text>  <text>{{item.topic}}</text>
+</view>
+
+<view>
+<text>开始时间:</text>  <text>{{item.start_date}}</text>
+</view>
+
+<view>
+<text>结束时间:</text>  <text>{{item.end_date}}</text>
+</view>
+
+<view>
+
+
+</view>
+
+</view>
+
+</block>
+
+</view>
+
+</view>

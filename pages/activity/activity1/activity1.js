@@ -31,7 +31,7 @@ Page({
       success(res) {
         console.log(res.data)
         console.log(res.data.status)
-        console.log(this.data)
+        
         var content_response = res.data.status
         if(res.data.status==true){
           content_response = "提交成功,请等待审核!"
@@ -40,11 +40,7 @@ Page({
         wx.showModal({
           title: '后台提示',
           content: content_response,
-          showCancel: false,
-          cancelText: '',
-          cancelColor: '',
-          confirmText: '确定',
-          confirmColor: '',
+          
           success: function(res1) {
 
             if (res.data.status == true) {

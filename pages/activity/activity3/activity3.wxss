@@ -1,1 +1,7 @@
-/* pages/activity/activity3/activity3.wxss */
+/* pages/activity/activity2/activity2.wxss */
+page { background-color: #eff3f5; }
+.items { margin-top:5px;margin-bottom: 20px;
+padding:8px 20px;text-align: center;
+background-color: white}
+.items text:nth-child(1) {color:#7f7f7f}
+.items view:nth-child(1) {padding-bottom: 15px;border-bottom: #eeeeee}

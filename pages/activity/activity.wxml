@@ -1,7 +1,7 @@
 <!--pages/activity.wxml-->
 <view class="container">
 
-<text>叩丁狼活动室</text>
+<text>叩丁狼活動室</text>
 
 <button  class='function-button' type='primary'  bindtap='applyFor' >申请活动室</button>
 <button  class='function-button' type='primary'  bindtap='detail' >本月活动表</button>
