@@ -38,7 +38,7 @@ App({
     userInfo: null,
     code:null,
     // base_url: "http://localhost:5000",
-    base_url: "https://xcx.520langma.com",
+    base_url: "https://xcx.wolfcode.cn",
     commonUrl: this,
     testPublic: false,
     hasRegister:false,
